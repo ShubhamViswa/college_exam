@@ -1,10 +1,19 @@
-Certainly! Here's a merged and detailed explanation of all the answers:
 
 ---
 
 ### **1. What is HTML? Explain its use. Also explain the structure of an HTML document.**
 
-**HTML (HyperText Markup Language)** is the fundamental language used to create web pages. It is a markup language that structures the content on a webpage by using tags to define elements like headings, paragraphs, links, images, forms, and more. HTML tells the web browser how to display content and organize it in a meaningful way.
+1. **HTML Definition**:
+   - HTML (HyperText Markup Language) is the primary language used to create web pages.
+
+2. **Purpose**:
+   - It is a markup language that structures content on a webpage.
+
+3. **Content Structuring**:
+   - HTML uses tags to define elements like headings, paragraphs, links, images, forms, and more.
+
+4. **Functionality**:
+   - HTML tells the web browser how to display and organize content in a meaningful way.
 
 #### **Uses of HTML:**
 1. **Website Structure**: HTML allows developers to organize content on a webpage using elements like headings (`<h1>`, `<h2>`, etc.), paragraphs (`<p>`), and links (`<a>`).
