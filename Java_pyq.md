@@ -432,4 +432,164 @@ public class TestInheritance {
 ```
 
 In this example:
-- The `Dog` class inherits the `sound` method from the `Animal` class but overrides it to provide its 
+- The `Dog` class inherits the `sound` method from the `Animal` class but overrides it to provide its
+
+
+### **What is inheritance in java explain its type if we need to extend nore than one class how it works explain with example**
+
+## **Inheritance in Java**  
+
+Inheritance is one of the fundamental concepts of Object-Oriented Programming (OOP) that allows a class (child/subclass) to acquire the properties and behaviors (methods and fields) of another class (parent/superclass). This promotes code reusability and establishes a parent-child relationship between classes.
+
+### **Types of Inheritance in Java**
+Java supports the following types of inheritance:
+
+1. **Single Inheritance**  
+   - A child class inherits from a single parent class.  
+   - Example:
+     ```java
+     class Parent {
+         void display() {
+             System.out.println("This is Parent class");
+         }
+     }
+     class Child extends Parent {
+         void show() {
+             System.out.println("This is Child class");
+         }
+     }
+     public class Test {
+         public static void main(String[] args) {
+             Child obj = new Child();
+             obj.display(); // Inherited method
+             obj.show();    // Child's own method
+         }
+     }
+     ```
+     **Output:**
+     ```
+     This is Parent class  
+     This is Child class  
+     ```
+
+2. **Multilevel Inheritance**  
+   - A child class inherits from a parent class, and another class further inherits from the child class.
+   - Example:
+     ```java
+     class Grandparent {
+         void showGrandparent() {
+             System.out.println("This is Grandparent class");
+         }
+     }
+     class Parent extends Grandparent {
+         void showParent() {
+             System.out.println("This is Parent class");
+         }
+     }
+     class Child extends Parent {
+         void showChild() {
+             System.out.println("This is Child class");
+         }
+     }
+     public class Test {
+         public static void main(String[] args) {
+             Child obj = new Child();
+             obj.showGrandparent();
+             obj.showParent();
+             obj.showChild();
+         }
+     }
+     ```
+     **Output:**
+     ```
+     This is Grandparent class  
+     This is Parent class  
+     This is Child class  
+     ```
+
+3. **Hierarchical Inheritance**  
+   - Multiple child classes inherit from the same parent class.
+   - Example:
+     ```java
+     class Parent {
+         void showParent() {
+             System.out.println("This is Parent class");
+         }
+     }
+     class Child1 extends Parent {
+         void showChild1() {
+             System.out.println("This is Child1 class");
+         }
+     }
+     class Child2 extends Parent {
+         void showChild2() {
+             System.out.println("This is Child2 class");
+         }
+     }
+     public class Test {
+         public static void main(String[] args) {
+             Child1 obj1 = new Child1();
+             obj1.showParent();
+             obj1.showChild1();
+
+             Child2 obj2 = new Child2();
+             obj2.showParent();
+             obj2.showChild2();
+         }
+     }
+     ```
+     **Output:**
+     ```
+     This is Parent class  
+     This is Child1 class  
+     This is Parent class  
+     This is Child2 class  
+     ```
+
+4. **Multiple Inheritance (Through Interfaces in Java)**  
+   - Java does not support multiple inheritance with classes to avoid ambiguity issues.
+   - However, it can be achieved using **interfaces**.
+
+### **How to Extend More Than One Class in Java?**
+Java does **not** support **multiple inheritance** using **classes** directly. Instead, **interfaces** can be used to achieve this.
+
+#### **Example of Multiple Inheritance using Interfaces:**
+```java
+interface A {
+    void showA();
+}
+
+interface B {
+    void showB();
+}
+
+class C implements A, B {
+    public void showA() {
+        System.out.println("This is method from Interface A");
+    }
+
+    public void showB() {
+        System.out.println("This is method from Interface B");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        C obj = new C();
+        obj.showA();
+        obj.showB();
+    }
+}
+```
+**Output:**
+```
+This is method from Interface A  
+This is method from Interface B  
+```
+
+### **Key Takeaways**
+- **Java supports single, multilevel, and hierarchical inheritance with classes.**
+- **Java does not support multiple inheritance with classes but allows it through interfaces.**
+- **Interfaces allow a class to implement multiple behaviors, making Java more flexible and avoiding the diamond problem.**
+
+Would you like me to provide a real-life analogy for better understanding?
